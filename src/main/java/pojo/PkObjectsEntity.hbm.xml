@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.PkObjectsEntity" table="PK_OBJECTS" schema="OLIM">
+        <id name="objectId">
+            <column name="OBJECT_ID" sql-type="number(*)" precision="2147483646"/>
+        </id>
+        <property name="name">
+            <column name="NAME" sql-type="varchar2(255)"/>
+        </property>
+        <property name="discription">
+            <column name="DISCRIPTION" sql-type="varchar2(255)" not-null="true"/>
+        </property>
+        <many-to-one name="pkObjectTypesByObjectTypeId" class="pojo.PkObjectTypesEntity">
+            <column name="OBJECT_TYPE_ID"/>
+        </many-to-one>
+        <many-to-one name="pkObjectsByContainerId" class="pojo.PkObjectsEntity">
+            <column name="CONTAINER_ID" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

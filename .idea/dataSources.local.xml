@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="object_db@localhost" uuid="a6dc6df5-a1a7-4e06-9e81-72f6f5287d73">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    <data-source name="@localhost" uuid="833a83ec-4125-447d-88c1-a71d6445d2f6">
+      <database-info product="Oracle" version="Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0">
+        <extra-name-characters>$#</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <first-sync>true</first-sync>
-      <user-name>system</user-name>
+      <user-name>olim</user-name>
+      <resolve-scope>*:OLIM,PUBLIC</resolve-scope>
     </data-source>
   </component>
 </project>

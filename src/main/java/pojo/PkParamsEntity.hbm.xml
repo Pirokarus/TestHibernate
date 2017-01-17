@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="pojo.PkParamsEntity" table="PK_PARAMS" schema="OLIM">
+        <property name="textValue">
+            <column name="TEXT_VALUE" sql-type="varchar2(255)" not-null="true"/>
+        </property>
+        <property name="numberValue">
+            <column name="NUMBER_VALUE" sql-type="number(*)" precision="2147483646" not-null="true"/>
+        </property>
+        <many-to-one name="pkObjectsByObjectId" class="pojo.PkObjectsEntity">
+            <column name="OBJECT_ID"/>
+        </many-to-one>
+        <many-to-one name="pkAttributesByAttributeId" class="pojo.PkAttributesEntity">
+            <column name="ATTRIBUTE_ID"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
