@@ -4,31 +4,26 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
         <property name="connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
         <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
 
         <property name="connection.username">olim</property>
         <property name="connection.password">admin</property>
 
+        <mapping class="com.olim.pojo.PkAttributesEntity"/>
+        <mapping class="com.olim.pojo.PkAttributeBindsEntity"/>
+        <mapping class="com.olim.pojo.PkAttributeTypesEntity"/>
+        <mapping class="com.olim.pojo.PkObjectsEntity"/>
+        <mapping class="com.olim.pojo.PkObjectTypesEntity"/>
+        <mapping class="com.olim.pojo.PkParamsEntity"/>
+        <mapping class="com.olim.pojo.PkReferencesEntity"/>
+
         <!-- NOTE that after automapping with IDEA property username and password will delete -->
         <!--and will be:  Initial SessionFactory failedorg.hibernate.service.spi.ServiceException: Unable to create requested service-->
         <!-- NOTE that after automapping with IDEA property username and password will delete -->
 
-        <mapping resource="pojo/PkAttributesEntity.hbm.xml"/>
-        <mapping class="pojo.PkAttributesEntity"/>
-        <mapping resource="pojo/PkAttributeBindsEntity.hbm.xml"/>
-        <mapping class="pojo.PkAttributeBindsEntity"/>
-        <mapping resource="pojo/PkAttributeTypesEntity.hbm.xml"/>
-        <mapping class="pojo.PkAttributeTypesEntity"/>
-        <mapping resource="pojo/PkObjectsEntity.hbm.xml"/>
-        <mapping class="pojo.PkObjectsEntity"/>
-        <mapping resource="pojo/PkObjectTypesEntity.hbm.xml"/>
-        <mapping class="pojo.PkObjectTypesEntity"/>
-        <mapping resource="pojo/PkParamsEntity.hbm.xml"/>
-        <mapping class="pojo.PkParamsEntity"/>
-        <mapping resource="pojo/PkReferencesEntity.hbm.xml"/>
-        <mapping class="pojo.PkReferencesEntity"/>
+
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
